@@ -1,0 +1,167 @@
+{
+  "common": {
+    "appName": "Pashu Sanjivani",
+    "logout": "Logout",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "back": "Back",
+    "language": "Language",
+    "yes": "Yes",
+    "no": "No",
+    "online": "Online"
+  },
+  "auth": {
+    "signup": "Sign Up",
+    "login": "Login",
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to your account to continue",
+    "signupTitle": "Create Account",
+    "signupSubtitle": "Register to start reporting livestock health",
+    "name": "Full Name",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signupSuccess": "Account created successfully",
+    "loginSuccess": "Logged in successfully"
+  },
+  "predict": {
+    "title": "Report Livestock Health",
+    "subtitle": "Describe your animal's symptoms for diagnosis",
+    "aiDiagnosis": "AI Powered Diagnosis",
+    "assistant": "Pashu Assistant",
+    "assistantSubtitle": "Describe symptoms and upload a photo to get an instant health report.",
+    "chat": {
+      "welcome": "Namaste! I am your Pashu Assistant. Let's start by checking your animal. Please upload a clear photo of the animal.",
+      "detected": "Detected a healthy-looking {{animal}}! Now, let's talk about the symptoms. Select up to 4 symptoms below.",
+      "confirmAnimal": "I think this is a {{animal}}, but I'm not entirely sure. Is that correct?",
+      "manualSelect": "I couldn't detect the animal automatically. Please select the animal type manually.",
+      "selectSymptoms": "Got it. Now, please select the symptoms you've observed (max 4).",
+      "tapUpload": "Tap to Upload Photo",
+      "uploadConstraints": "JPG, PNG up to 10MB",
+      "confirmContinue": "Confirm & Continue",
+      "analyzing": "Analyzing all information... Please wait.",
+      "placeholder": "Select options above...",
+      "typeAnswer": "Type your answer...",
+      "yesCorrect": "Yes, Correct",
+      "noChange": "No, change it"
+    },
+    "questions": {
+      "Duration": "How many days has the animal been showing these symptoms?",
+      "Body_Temperature": "What is the current body temperature? (if measured)",
+      "Appetite_Loss": "Is the animal experiencing loss of appetite?",
+      "Vomiting": "Has there been any vomiting?",
+      "Diarrhea": "Is the animal suffering from diarrhea?",
+      "Coughing": "Is there any persistent coughing?",
+      "Labored_Breathing": "Is the animal having difficulty breathing?",
+      "Lameness": "Is there any lameness or difficulty in walking?",
+      "Skin_Lesions": "Have you noticed any skin lesions or lumps?",
+      "Nasal_Discharge": "Is there any discharge from the nose?",
+      "Eye_Discharge": "Is there any discharge from the eyes?"
+    },
+    "placeholders": {
+      "days": "e.g. 3",
+      "temp": "e.g. 39.5"
+    },
+    "result": {
+      "title": "AI Diagnosis Result",
+      "healthAnalysis": "Health Analysis",
+      "emergency": "EMERGENCY",
+      "risk": "Risk",
+      "contactVet": "Contact Vet Immediately",
+      "animal": "Animal",
+      "confirmedType": "Confirmed Type",
+      "confidence": "Confidence",
+      "accuracy": "AI Accuracy Score",
+      "temperature": "Temperature",
+      "clinicalReading": "Clinical Reading",
+      "symptomSummary": "Symptom Summary",
+      "recommendations": "Recommendations",
+      "recommendationsPlaceholder": "Please provide rest, clean water, and monitor symptoms closely. If condition worsens, contact a vet.",
+      "aiServiceError": "Error connecting to AI service",
+      "saveToCloud": "Save to Cloud",
+      "newTest": "Start New Test"
+    },
+    "animalTypes": {
+      "cow": "Cow",
+      "dog": "Dog",
+      "cat": "Cat",
+      "goat": "Goat",
+      "buffalo": "Buffalo",
+      "horse": "Horse",
+      "sheep": "Sheep",
+      "pig": "Pig"
+    },
+    "symptomsList": {
+      "Not Eating": "Not Eating",
+      "Fever": "Fever",
+      "Weakness": "Weakness",
+      "Lazy / Not Active": "Lazy / Not Active",
+      "Vomiting": "Vomiting",
+      "Coughing": "Coughing",
+      "Weight Loss": "Weight Loss",
+      "Reduced Milk Production": "Reduced Milk Production",
+      "Breathing Problem": "Breathing Problem",
+      "Skin Infection": "Skin Infection",
+      "Eye Infection": "Eye Infection",
+      "Swelling": "Swelling",
+      "Diarrhea": "Diarrhea",
+      "None": "None"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "title": "Livestock Dashboard",
+    "quickActions": "Quick Actions",
+    "newReport": "New Report",
+    "viewReports": "View All Reports",
+    "hero": {
+      "badge": "AI Powered Veterinary Care",
+      "title": "Smart Health Monitoring",
+      "subtitle": "for Your Animals",
+      "description": "Upload animal photos, describe symptoms and get instant AI-based disease prediction, severity level and treatment guidance.",
+      "startBtn": "Start Diagnosis →",
+      "viewBtn": "View Reports",
+      "accuracy": "AI Accuracy"
+    },
+    "features": {
+      "photo": {
+        "title": "Upload Photo",
+        "desc": "Take a clear picture of infected area for accurate analysis"
+      },
+      "symptoms": {
+        "title": "Describe Symptoms",
+        "desc": "Enter behaviour and physical symptoms of the animal"
+      },
+      "prediction": {
+        "title": "AI Prediction",
+        "desc": "Get disease probability, severity & treatment suggestions"
+      },
+      "vets": {
+        "title": "Nearby Vets",
+        "desc": "Find trusted veterinary clinics and doctors near your location"
+      }
+    },
+    "recentActivity": "Recent Activity",
+    "table": {
+      "animal": "Animal",
+      "disease": "Disease",
+      "severity": "Severity",
+      "date": "Date"
+    },
+    "vets": {
+      "title": "Nearby Veterinary Services",
+      "subtitle": "Trusted clinics and hospitals for your animals",
+      "viewAll": "View All Clinics",
+      "call": "Call Now",
+      "directions": "Directions",
+      "hospitalName": "Hospital Name",
+      "location": "Location",
+      "type": "Specialty"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+flask
+flask-cors
+tensorflow
+opencv-python-headless
+numpy
+joblib
+pandas
+xgboost
+python-dotenv
