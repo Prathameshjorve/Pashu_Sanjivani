@@ -23,10 +23,19 @@ export default function LoginPage() {
 
     try {
       const response = await authAPI.login({ email, password });
-      const { token } = response.data;
+      const { token, user } = response.data;
       localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      useAuthStore.getState().setUser(user);
       setToken(token);
-      router.push('/dashboard');
+      
+      if (user.role === 'vet') {
+        router.push('/vet/dashboard');
+      } else if (user.role === 'admin') {
+        router.push('/admin/dashboard');
+      } else {
+        router.push('/dashboard');
+      }
     } catch (err: any) {
       setError(err.response?.data?.message || t('common.error'));
     } finally {

@@ -7,6 +7,7 @@ import Link from "next/link";
 import Navbar from "@/components/navbar";
 import { useAuthStore } from "@/lib/store";
 import { useRouter } from "next/navigation";
+import { useRoleProtectedRoute } from "@/hooks/useRoleProtectedRoute";
 
 const VET_DATA = [
   {
@@ -55,11 +56,22 @@ export default function VetsPage() {
   const { t } = useTranslation();
   const logout = useAuthStore((state) => state.logout);
   const router = useRouter();
+  const isAuthorized = useRoleProtectedRoute(['farmer']);
 
   const handleLogout = () => {
     logout();
     router.push("/login");
   };
+
+  if (!isAuthorized) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-100 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-500">Authorizing...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-100 pb-20">

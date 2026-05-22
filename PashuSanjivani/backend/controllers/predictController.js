@@ -40,6 +40,9 @@ async function predictDisease(req, res) {
       console.error('Error saving report', err)
     }
 
+    if (prediction.recommendations && !prediction.suggestion) {
+      prediction.suggestion = prediction.recommendations;
+    }
     res.json(prediction)
   } catch (err) {
     console.error('Error in predictDisease controller:', err)
@@ -49,7 +52,9 @@ async function predictDisease(req, res) {
 
 async function getReports(req, res) {
   try {
-    const rows = await User.getReports()
+    const userId = req.user?.id
+    const role = req.user?.role
+    const rows = await User.getReports(userId, role)
     res.json(rows)
   } catch (err) {
     res.status(500).json({ message: 'Unable to fetch reports' })

@@ -42,10 +42,19 @@ export default function SignupPage() {
         password: formData.password,
       });
 
-      const { token } = loginResponse.data;
+      const { token, user } = loginResponse.data;
       localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      useAuthStore.getState().setUser(user);
       setToken(token);
-      router.push('/dashboard');
+      
+      if (user.role === 'vet') {
+        router.push('/vet/dashboard');
+      } else if (user.role === 'admin') {
+        router.push('/admin/dashboard');
+      } else {
+        router.push('/dashboard');
+      }
     } catch (err: any) {
       setError(err.response?.data?.message || t('common.error'));
     } finally {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useProtectedRoute } from '@/hooks/useProtectedRoute';
+import { useRoleProtectedRoute } from '@/hooks/useRoleProtectedRoute';
 import { useAuthStore } from '@/lib/store';
 import { useTranslation } from 'react-i18next';
 import Navbar from '@/components/navbar';
@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function PredictPage() {
   const { t } = useTranslation();
   const router = useRouter();
-  const isLoading = useProtectedRoute();
+  const isAuthorized = useRoleProtectedRoute(['farmer']);
   const logout = useAuthStore((state) => state.logout);
   const [prediction, setPrediction] = useState<any>(null);
 
@@ -22,12 +22,11 @@ export default function PredictPage() {
     router.push('/login');
   };
 
-  if (isLoading) {
+  if (!isAuthorized) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-green-50">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-green-600 border-t-transparent rounded-full animate-spin" />
-          <p className="text-green-800 font-bold animate-pulse">{t('common.loading')}</p>
+      <div className="min-h-screen bg-[#F0F7F4] flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-500">Authorizing...</p>
         </div>
       </div>
     );

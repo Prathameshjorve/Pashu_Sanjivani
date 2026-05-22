@@ -10,6 +10,8 @@ const authRoutes = require('./routes/auth')
 const predictRoutes = require('./routes/predict')
 const chatRoutes = require('./routes/chat')
 
+const vetRoutes = require("./routes/vetRoutes");
+
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -21,7 +23,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 app.use('/api/auth', authRoutes)
 app.use('/api', predictRoutes)
 app.use('/api', chatRoutes)
-
+app.use("/api/vet", vetRoutes);
 const PORT = process.env.PORT || 5000
 
 async function ensureTables() {
@@ -51,6 +53,21 @@ async function ensureTables() {
 
   await db.query(usersSql)
   await db.query(reportsSql)
+
+  // Add missing columns safely
+  const alterUsersSql = `ALTER TABLE users ADD COLUMN IF NOT EXISTS role TEXT DEFAULT 'farmer';`
+  await db.query(alterUsersSql)
+
+  const alterReportsSql = `
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS review_status TEXT DEFAULT 'pending';
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS vet_id INTEGER;
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS vet_diagnosis TEXT;
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS vet_advice TEXT;
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS vet_medicine TEXT;
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS follow_up_required BOOLEAN DEFAULT false;
+    ALTER TABLE reports ADD COLUMN IF NOT EXISTS reviewed_at TIMESTAMP;
+  `
+  await db.query(alterReportsSql)
 }
 
 app.get('/', (req, res) => res.json({ message: 'Pashu Sanjivani API' }))

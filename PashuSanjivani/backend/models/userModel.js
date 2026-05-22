@@ -1,15 +1,17 @@
 const db = require('../config/db')
 
-async function createUser({ name, email, password_hash }) {
+async function createUser({ name, email, password_hash, role }) {
   const res = await db.query(
-    'INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3) RETURNING id, name, email',
-    [name, email, password_hash]
+    `INSERT INTO users (name, email, password_hash, role) 
+     VALUES ($1, $2, $3, COALESCE($4, 'farmer')) 
+     RETURNING id, name, email, role`,
+    [name, email, password_hash, role || 'farmer']
   )
   return res.rows[0]
 }
 
 async function findByEmail(email) {
-  const res = await db.query('SELECT * FROM users WHERE email=$1', [email])
+  const res = await db.query('SELECT id, name, email, password_hash, role FROM users WHERE email=$1', [email])
   return res.rows[0]
 }
 
@@ -21,8 +23,16 @@ async function createReport({ user_id, animal_type, symptoms, disease, severity,
   return res.rows[0]
 }
 
-async function getReports() {
-  const res = await db.query('SELECT * FROM reports ORDER BY created_at DESC')
+async function getReports(userId, role) {
+  let query = 'SELECT * FROM reports ORDER BY created_at DESC'
+  let params = []
+  
+  if (role === 'farmer') {
+    query = 'SELECT * FROM reports WHERE user_id = $1 ORDER BY created_at DESC'
+    params = [userId]
+  }
+  
+  const res = await db.query(query, params)
   return res.rows
 }
 
