@@ -13,6 +13,19 @@
     "no": "No",
     "online": "Online"
   },
+  "reports": {
+    "title": "My Reports",
+    "subtitle": "View your livestock health reports",
+    "noReports": "No reports found yet",
+    "reportDate": "Report Date",
+    "animal": "Animal",
+    "symptoms": "Symptoms",
+    "disease": "Disease",
+    "severity": "Severity",
+    "suggestion": "Treatment Guidance",
+    "action": "Action",
+    "view": "View Details"
+  },
   "auth": {
     "signup": "Sign Up",
     "login": "Login",
@@ -32,6 +45,24 @@
   "predict": {
     "title": "Report Livestock Health",
     "subtitle": "Describe your animal's symptoms for diagnosis",
+    "diseases": {
+      "bovine respiratory disease": "Bovine Respiratory Disease",
+      "bovine tuberculosis": "Bovine Tuberculosis",
+      "canine distemper": "Canine Distemper",
+      "canine parvovirus": "Canine Parvovirus",
+      "caprine arthritis encephalitis": "Caprine Arthritis Encephalitis",
+      "equine influenza": "Equine Influenza",
+      "scrapie": "Scrapie",
+      "swine influenza": "Swine Influenza",
+      "lumpy skin disease": "Lumpy Skin Disease",
+      "infection (sample)": "Infection (Sample)"
+    },
+    "severity": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "critical": "Critical"
+    },
     "aiDiagnosis": "AI Powered Diagnosis",
     "assistant": "Pashu Assistant",
     "assistantSubtitle": "Describe symptoms and upload a photo to get an instant health report.",

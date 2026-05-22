@@ -75,7 +75,7 @@ export default function ReportsPage() {
               href="/predict"
               className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition"
             >
-              {t('predict.newReport')}
+              {t('dashboard.newReport')}
             </a>
           </div>
 
@@ -99,7 +99,7 @@ export default function ReportsPage() {
                 href="/predict"
                 className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg"
               >
-                {t('predict.newReport')}
+                {t('dashboard.newReport')}
               </a>
 
             </div>
@@ -157,11 +157,11 @@ export default function ReportsPage() {
                       <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4">
 
                         <p className="text-sm text-red-700 font-medium">
-                          {t('predict.disease')}
+                          {t('reports.disease')}
                         </p>
 
                         <p className="text-2xl font-bold text-red-700">
-                          {report.disease}
+                          {report.disease ? t(`predict.diseases.${report.disease.toLowerCase()}`, report.disease) : '--'}
                         </p>
 
                       </div>
@@ -171,7 +171,7 @@ export default function ReportsPage() {
                         <div className="flex-1 bg-gray-50 rounded-xl p-4">
 
                           <p className="text-sm text-gray-600 font-medium">
-                            {t('predict.severity')}
+                            {t('reports.severity')}
                           </p>
 
                           <span
@@ -183,7 +183,7 @@ export default function ReportsPage() {
                                 : 'bg-green-100 text-green-800'
                             }`}
                           >
-                            {report.severity}
+                            {report.severity ? t(`predict.severity.${report.severity.toLowerCase()}`, report.severity) : '--'}
                           </span>
 
                         </div>
@@ -193,7 +193,7 @@ export default function ReportsPage() {
                       <div className="bg-blue-50 rounded-xl p-4">
 
                         <p className="text-sm text-blue-700 font-medium">
-                          {t('predict.suggestion')}
+                          {t('reports.suggestion')}
                         </p>
 
                         <p className="text-gray-900 mt-2">

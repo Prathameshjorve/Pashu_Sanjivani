@@ -61,9 +61,8 @@ def api_predict_disease():
             
         # 3. Translate result back to user's selected language
         if target_lang != 'en':
-            result['disease'] = translate_text(result['disease'], target_lang, 'en')
+            # Do not translate disease and severity to keep them standardized (English) in DB and frontend
             result['recommendations'] = translate_text(result['recommendations'], target_lang, 'en')
-            result['severity'] = translate_text(result['severity'], target_lang, 'en')
         
         return jsonify(result)
     except Exception as e:

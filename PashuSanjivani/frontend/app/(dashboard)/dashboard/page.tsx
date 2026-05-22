@@ -32,10 +32,11 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-100 pb-20">
 
       {/* HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-6 pt-14 pb-10 grid md:grid-cols-2 gap-10 items-center">
+      <section className="max-w-7xl mx-auto px-6 pt-14 pb-10 grid md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
         {/* LEFT */}
         <motion.div
+          className="lg:col-span-5"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -78,17 +79,17 @@ export default function Dashboard() {
 
         {/* RIGHT IMAGE */}
         <motion.div
-          className="relative"
+          className="relative lg:col-span-7 w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
 
-          <div className="absolute -inset-4 bg-gradient-to-r from-green-400 to-emerald-400 rounded-[3rem] blur-2xl opacity-20"></div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-green-400 to-emerald-400 rounded-[3rem] blur-2xl opacity-25"></div>
 
           <img
-            src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=1400&auto=format&fit=crop"
-            className="rounded-[2.5rem] shadow-2xl relative z-10 border-8 border-white object-cover h-[500px] w-full"
+            src="/hero-vet.jpg"
+            className="rounded-[2.5rem] shadow-2xl relative z-10 border-4 border-white object-cover h-[480px] w-full"
             alt="Livestock Health AI"
           />
 
@@ -257,7 +258,7 @@ export default function Dashboard() {
           <div className="flex justify-between items-center mb-10">
 
             <h2 className="text-3xl font-black text-gray-900 tracking-tight">
-              Quick Actions
+              {t('dashboard.quickActions')}
             </h2>
 
           </div>
@@ -326,14 +327,14 @@ export default function Dashboard() {
           <div className="flex justify-between items-center mb-10">
 
             <h2 className="text-3xl font-black text-gray-900 tracking-tight">
-              Recent Activity
+              {t('dashboard.recentActivity')}
             </h2>
 
             <Link
               href="/reports"
               className="text-green-600 font-black text-sm uppercase tracking-widest hover:underline"
             >
-              View Reports →
+              {t('dashboard.viewReports')} &rarr;
             </Link>
 
           </div>
@@ -347,19 +348,19 @@ export default function Dashboard() {
                 <tr className="border-b border-gray-100">
 
                   <th className="pb-4 font-black text-xs uppercase tracking-widest text-gray-400">
-                    Animal
+                    {t('dashboard.table.animal')}
                   </th>
 
                   <th className="pb-4 font-black text-xs uppercase tracking-widest text-gray-400">
-                    Disease
+                    {t('dashboard.table.disease')}
                   </th>
 
                   <th className="pb-4 font-black text-xs uppercase tracking-widest text-gray-400">
-                    Severity
+                    {t('dashboard.table.severity')}
                   </th>
 
                   <th className="pb-4 font-black text-xs uppercase tracking-widest text-gray-400">
-                    Date
+                    {t('dashboard.table.date')}
                   </th>
 
                 </tr>
@@ -375,17 +376,17 @@ export default function Dashboard() {
                       🐄
                     </div>
 
-                    Buffalo
+                    {t('predict.animalTypes.buffalo')}
                   </td>
 
                   <td className="py-6">
-                    Lumpy Skin Disease
+                    {t('predict.diseases.lumpy skin disease')}
                   </td>
 
                   <td className="py-6">
 
                     <span className="bg-yellow-100 text-yellow-700 px-4 py-1.5 rounded-xl text-xs font-black uppercase">
-                      Medium
+                      {t('predict.severity.medium')}
                     </span>
 
                   </td>

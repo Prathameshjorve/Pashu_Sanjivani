@@ -16,12 +16,13 @@
   "reports": {
     "title": "माझे अहवाल",
     "subtitle": "तुमचे पशु आरोग्य अहवाल पहा",
-    "noReports": "अद्याप कोणतेही अहवाल नाहीत.",
+    "noReports": "अद्याप कोणतेही अहवाल नाहीत",
     "reportDate": "अहवालाची तारीख",
     "animal": "प्राणी",
     "symptoms": "लक्षणे",
     "disease": "आजार",
     "severity": "तीव्रता",
+    "suggestion": "उपचार मार्गदर्शन",
     "action": "कृती",
     "view": "तपशील पहा"
   },
@@ -44,6 +45,24 @@
   "predict": {
     "title": "पशु आरोग्य अहवाल",
     "subtitle": "निदानासाठी तुमच्या प्राण्याच्या लक्षणांचे वर्णन करा",
+    "diseases": {
+      "bovine respiratory disease": "बोव्हाइन श्वसन रोग (गोवंश श्वसन रोग)",
+      "bovine tuberculosis": "बोव्हाइन क्षयरोग (गोवंश क्षयरोग)",
+      "canine distemper": "केनाइन डिस्टेम्पर",
+      "canine parvovirus": "केनाइन पार्व्होव्हायरस",
+      "caprine arthritis encephalitis": "कॅप्रिन आर्थरायटिस एन्सेफलायटिस",
+      "equine influenza": "इक्वाइन इन्फ्लूएंझा",
+      "scrapie": "स्क्रॅपी",
+      "swine influenza": "स्वाइन इन्फ्लूएंझा",
+      "lumpy skin disease": "लम्पी त्वचा रोग",
+      "infection (sample)": "संसर्ग (नमुना)"
+    },
+    "severity": {
+      "low": "कमी",
+      "medium": "मध्यम",
+      "high": "उच्च",
+      "critical": "गंभीर"
+    },
     "aiDiagnosis": "AI आधारित निदान",
     "assistant": "पशु सहाय्यक",
     "assistantSubtitle": "त्वरीत आरोग्य अहवाल मिळविण्यासाठी लक्षणांचे वर्णन करा आणि फोटो अपलोड करा.",

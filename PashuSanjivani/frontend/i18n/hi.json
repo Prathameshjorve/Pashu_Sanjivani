@@ -16,12 +16,13 @@
   "reports": {
     "title": "मेरी रिपोर्ट",
     "subtitle": "अपने पशु स्वास्थ्य रिपोर्ट देखें",
-    "noReports": "अभी तक कोई रिपोर्ट नहीं है।",
+    "noReports": "अभी तक कोई रिपोर्ट नहीं है",
     "reportDate": "रिपोर्ट की तारीख",
     "animal": "पशु",
     "symptoms": "लक्षण",
     "disease": "बीमारी",
     "severity": "गंभीरता",
+    "suggestion": "उपचार मार्गदर्शन",
     "action": "क्रिया",
     "view": "विवरण देखें"
   },
@@ -44,6 +45,24 @@
   "predict": {
     "title": "पशु स्वास्थ्य रिपोर्ट",
     "subtitle": "निदान के लिए अपने पशु के लक्षणों का वर्णन करें",
+    "diseases": {
+      "bovine respiratory disease": "बोवाइन श्वसन रोग (गोवंश श्वसन रोग)",
+      "bovine tuberculosis": "बोवाइन तपेदिक (गोवंश क्षयरोग)",
+      "canine distemper": "केनाइन डिस्टेम्पर",
+      "canine parvovirus": "केनाइन पार्वोवायरस",
+      "caprine arthritis encephalitis": "कैप्रिन अर्थराइटिस एन्सेफलाइटिस",
+      "equine influenza": "इक्वाइन इन्फ्लूएंजा",
+      "scrapie": "स्क्रैपी",
+      "swine influenza": "स्वाइन इन्फ्लूएंजा",
+      "lumpy skin disease": "लम्पी त्वचा रोग",
+      "infection (sample)": "संक्रमण (नमूना)"
+    },
+    "severity": {
+      "low": "कम",
+      "medium": "मध्यम",
+      "high": "उच्च",
+      "critical": "गंभीर"
+    },
     "aiDiagnosis": "AI आधारित निदान",
     "assistant": "पशु सहायक",
     "assistantSubtitle": "तुरंत स्वास्थ्य रिपोर्ट प्राप्त करने के लिए लक्षणों का वर्णन करें और फोटो अपलोड करें।",
